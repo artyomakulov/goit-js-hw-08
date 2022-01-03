@@ -7,6 +7,6 @@ player.on('play', throttle(function () {
         localStorage.setItem('videoplayer-current-time', JSON.stringify(value))
     });}, 1000),);
 
-const startFrom = JSON.parse(localStorage.getItem('videoplayer-current-time'));
+const startFrom = JSON.parse(localStorage.getItem('videoplayer-current-time')) || 0;
 console.log(startFrom);
 player.setCurrentTime(startFrom)
