@@ -3,7 +3,7 @@ const iframe = document.querySelector('iframe');
 const player = new Vimeo.Player(iframe);
 
 player.on('play', throttle(function () {
-    player.getCurrentTime(0).then(function (value) {
+    player.getCurrentTime().then(function (value) {
         localStorage.setItem('videoplayer-current-time', JSON.stringify(value))
     });}, 1000),);
 
